@@ -1,0 +1,11 @@
+{
+  "dateFormat": "YYYY-MM-DD HH:mm:ss",
+  "port": 8080,
+  "cors": {
+    "origin": "*",
+    "methods": [
+      "GET",
+      "POST"
+    ]
+  }
+}
