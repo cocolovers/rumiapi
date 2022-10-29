@@ -14,13 +14,16 @@ export class AppServer {
     });
 
     constructor() {
+        //@TODO This is incorrect, it should register connect to start every
         this.io.on(IoCommandEnum.CONNECTION, (socket: Socket) => {
             services.log.info(TagEnum.App, `${MessageEnum.SOCKET_CONNECTED} - ${socket.id} `);
+
             new ServerCommandRegister(socket);
         });
-
         this.http.listen(config.port, () => {
             services.log.info(TagEnum.App, `${MessageEnum.CONNECTED_AND_LISTENING_PORT} ${config.port}`);
         });
+
     }
+
 }
