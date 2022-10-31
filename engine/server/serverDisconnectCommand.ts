@@ -10,8 +10,9 @@ export const serverDisconnectCommand = (socket: Socket) => (response: string) =>
         try {
             serverUsers.forEach((iuser, name) => {
                 if (iuser.socketId == socket.id) {
-                    serverUsers.delete(name);
-                    throw new Error(MessageEnum.SERVER_USER_FOUND);
+                    // serverUsers.delete(name);
+                    // throw new Error(MessageEnum.SERVER_USER_FOUND);
+                    services.log.info(TagEnum.ServerDisconnectCommand, `${MessageEnum.USER_DISCONNECTED} - ${iuser.name} ${socket.id}`);
                 }
             });
             // eslint-disable-next-line no-empty

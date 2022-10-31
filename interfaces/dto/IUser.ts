@@ -4,6 +4,6 @@ export interface IUser {
     socket: Socket;
     socketId: string;
     name: string;
-    id: number;
+    id: string;
     timestamp: number;
 }
