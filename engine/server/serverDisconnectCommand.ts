@@ -8,12 +8,9 @@ import {Socket} from "socket.io";
 export const serverDisconnectCommand = (socket: Socket) => (response: string) => {
     if (response === IoCommandEnum.SERVER_DISCONNECT) {
         try {
-            serverUsers.forEach((iuser, name) => {
-                if (iuser.socketId == socket.id) {
-                    // serverUsers.delete(name);
-                    // throw new Error(MessageEnum.SERVER_USER_FOUND);
-                    services.log.info(TagEnum.ServerDisconnectCommand, `${MessageEnum.USER_DISCONNECTED} - ${iuser.name} ${socket.id}`);
-                }
+            Array.from(serverUsers.values()).map(user => ({id: user.socketId, username: user.name}))
+                .filter(user => user.id == socket.id).forEach((user) => {
+                services.log.info(TagEnum.ServerDisconnectCommand, `${MessageEnum.USER_DISCONNECTED} - ${user.username} ${user.id}`);
             });
             // eslint-disable-next-line no-empty
         } catch (ex: any) {
