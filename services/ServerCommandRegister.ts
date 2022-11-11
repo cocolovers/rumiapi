@@ -1,8 +1,8 @@
 import {Socket} from 'socket.io';
-import {KeepAliveListener} from '../engine/server/keepAliveListener';
-import {IoCommandEnum} from '../enums/IoCommandEnum';
-import {userConnectCommand} from "../engine/server/userConnectCommand";
-import {serverDisconnectCommand} from "../engine/server/serverDisconnectCommand";
+import {KeepAliveListener} from '../commands/keepAliveListener';
+import {IoCommandEnum} from '../models/enums/IoCommandEnum';
+import {userConnectCommand} from "../commands/userConnectCommand";
+import {serverDisconnectCommand} from "../commands/serverDisconnectCommand";
 import {IEvent} from "../interfaces/events/IEvent";
 
 export class ServerCommandRegister {

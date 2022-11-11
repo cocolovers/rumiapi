@@ -1,11 +1,11 @@
-import {services} from '../../services/services';
-import {TagEnum} from '../../enums/TagEnum';
-import {ICommandUserConnect} from '../../interfaces/dto/ICommandUserConnect';
-import {MessageEnum} from '../../enums/MessageEnum';
-import {UserDto} from '../../dto/UserDto';
-import {serverUsers} from "../Users";
+import {services} from '../services/services';
+import {TagEnum} from '../models/enums/TagEnum';
+import {ICommandUserConnect} from '../interfaces/dto/ICommandUserConnect';
+import {MessageEnum} from '../models/enums/MessageEnum';
+import {UserDto} from '../models/UserDto';
+import {serverUsers} from "../models/const/Users";
 import {Socket} from "socket.io";
-import {ErrorMessageEnum} from "../../enums/ErrorMessageEnum";
+import {ErrorMessageEnum} from "../models/enums/ErrorMessageEnum";
 
 export const userConnectCommand = (socket: Socket) => (user: ICommandUserConnect, response: any) => {
     services.log.info(TagEnum.UserConnectedCommand, `${MessageEnum.USER_CONNECTED} - ${user.name} ${user.id}`);

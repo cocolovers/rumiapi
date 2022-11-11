@@ -1,8 +1,8 @@
-import {IoCommandEnum} from '../../enums/IoCommandEnum';
-import {serverUsers} from "../Users";
-import {MessageEnum} from "../../enums/MessageEnum";
-import {services} from "../../services/services";
-import {TagEnum} from "../../enums/TagEnum";
+import {IoCommandEnum} from '../models/enums/IoCommandEnum';
+import {serverUsers} from "../models/const/Users";
+import {MessageEnum} from "../models/enums/MessageEnum";
+import {services} from "../services/services";
+import {TagEnum} from "../models/enums/TagEnum";
 import {Socket} from "socket.io";
 
 export const serverDisconnectCommand = (socket: Socket) => (response: string) => {

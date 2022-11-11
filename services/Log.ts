@@ -1,6 +1,10 @@
 import {Ilog} from '../interfaces/services/ILog';
 import {ServiceBase} from './ServiceBase';
-import {getDateNow} from "../utils/Date";
+import {getDateNow} from "./Date";
+
+const a = (text: string) => {
+    console.log(text);
+};
 
 export class Log extends ServiceBase implements Ilog {
 

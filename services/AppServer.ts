@@ -1,10 +1,10 @@
-import {IoCommandEnum} from "../enums/IoCommandEnum";
+import {IoCommandEnum} from "../models/enums/IoCommandEnum";
 import {Server as IoServer, Socket} from "socket.io";
 import {services} from "./services";
-import {TagEnum} from "../enums/TagEnum";
-import {MessageEnum} from "../enums/MessageEnum";
+import {TagEnum} from "../models/enums/TagEnum";
+import {MessageEnum} from "../models/enums/MessageEnum";
 import {createServer, Server} from 'http';
-import {ServerCommandRegister} from "../events/ServerCommandRegister";
+import {ServerCommandRegister} from "./ServerCommandRegister";
 import config from "../config.json";
 
 export class AppServer {

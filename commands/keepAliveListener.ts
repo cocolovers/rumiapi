@@ -1,8 +1,8 @@
 import {Socket} from "socket.io";
-import {serverUsers} from "../Users";
-import {MessageEnum} from "../../enums/MessageEnum";
-import {services} from "../../services/services";
-import {TagEnum} from "../../enums/TagEnum";
+import {serverUsers} from "../models/const/Users";
+import {MessageEnum} from "../models/enums/MessageEnum";
+import {services} from "../services/services";
+import {TagEnum} from "../models/enums/TagEnum";
 
 export const KeepAliveListener = (socket: Socket) => () => {
     try {
