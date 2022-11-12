@@ -14,7 +14,6 @@ export class AppServer {
     });
 
     constructor() {
-        //@TODO This is incorrect, it should register connect to start every
         this.io.on(IoCommandEnum.CONNECTION, (socket: Socket) => {
             services.log.info(TagEnum.App, `${MessageEnum.SOCKET_CONNECTED} - ${socket.id} `);
 
